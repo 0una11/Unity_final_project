@@ -1428,7 +1428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4740797216443291912, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
       propertyPath: m_Name
-      value: SnowGirl_2
+      value: SnowGirl
       objectReference: {fileID: 0}
     - target: {fileID: 4740797216443291914, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1473,8 +1473,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4740797216443291912, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633440564}
   m_SourcePrefab: {fileID: 100100000, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
+--- !u!1 &633440563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4740797216443291912, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
+  m_PrefabInstance: {fileID: 633440562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &633440564
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633440563}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1dd0df6d78a1cc54497461013bb4d2a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &635998588
 PrefabInstance:
   m_ObjectHideFlags: 0
