@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace Ou
 {
     /// <summary>
     /// NPC¸ê®Æ

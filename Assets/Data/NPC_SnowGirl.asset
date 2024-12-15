@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: SnowGirl
-  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript/DataNPC
+  m_Script: {fileID: 11500000, guid: 1fc82cda1f286054da3987899e45be36, type: 3}
+  m_Name: NPC_SnowGirl
+  m_EditorClassIdentifier: 
   sentences:
-  - "\u5DE6\u53F3\u770B\u5C0B\u627E\u6771\u897F"
-  - "\u611F\u89BA\u6709\u5371\u96AA"
+  - "\u5DE6\u53F3\u67E5\u770B\u72C0\u6CC1"
+  - "\u611F\u89BA\u5230\u5371\u96AA\u8981\u8DD1"
   - "\u62AC\u982D\u8868\u793A\u6EFF\u610F"
   - "\u9EDE\u982D\u8868\u793A\u958B\u5FC3"
-  - "\u4E0D\u8212\u670D\u878D\u5316"
+  - "\u4E0D\u958B\u5FC3\u878D\u5316"
