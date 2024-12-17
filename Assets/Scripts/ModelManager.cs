@@ -3,12 +3,12 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using Newtonsoft.Json; // 使用 JSON.Net 庫進行 JSON 解析
+using Newtonsoft.Json;
 
 namespace Ou
 {
     /// <summary>
-    /// 模型管理器：處理與語言模型 API 的互動
+    /// 模型管理器
     /// </summary>
     public class ModelManager : MonoBehaviour
     {
@@ -23,7 +23,46 @@ namespace Ou
         [SerializeField] private TMP_InputField inputField; // 輸入欄位
         [SerializeField] private TMP_Text outputText;       // 輸出文字欄位
         [SerializeField] private TMP_Text statusText;      // 狀態提示（如“請求中...”）
+        [SerializeField] private GameObject introductionPanel; // 背景介紹面板
+        [SerializeField] private GameObject mainUI;        // 遊戲主界面
 
+        [Header("NPC 控制器")]
+        [SerializeField] private NPCController npcController; // 連接 NPC 控制器
+
+        private void Start()
+        {
+            // 初始化 UI 狀態
+            ShowIntroduction();
+        }
+
+        private void ShowIntroduction()
+        {
+            if (introductionPanel != null)
+            {
+                introductionPanel.SetActive(true);
+            }
+
+            if (mainUI != null)
+            {
+                mainUI.SetActive(false);
+            }
+        }
+
+        public void StartGame()
+        {
+            if (introductionPanel != null)
+            {
+                introductionPanel.SetActive(false);
+            }
+
+            if (mainUI != null)
+            {
+                mainUI.SetActive(true);
+            }
+
+            // 重置狀態提示
+            UpdateStatus("請輸入問題開始互動！");
+        }
         private void Awake()
         {
             // 綁定輸入欄位的結束編輯事件
@@ -97,6 +136,7 @@ namespace Ou
                         string content = response.choices[0].message.content;
                         outputText.text = content;
                         UpdateStatus("請求完成！");
+                        TriggerAnimation(content); // 根據回應內容觸發動畫
                     }
                     else
                     {
@@ -128,6 +168,43 @@ namespace Ou
                 statusText.text = message;
             }
         }
+
+        private void TriggerAnimation(string response)
+        {
+            if (npcController == null)
+            {
+                Debug.LogError("NPC Controller 未正確設置！");
+                return;
+            }
+
+            Debug.Log($"Processing response for animation trigger: {response}");
+
+            // 使用對應表來管理觸發條件
+            var animationMap = new[]
+            {
+                new { Keywords = new[] { "高興", "快樂" }, AnimationIndex = 1 },
+                new { Keywords = new[] { "生氣", "憤怒" }, AnimationIndex = 4 },
+                new { Keywords = new[] { "思考", "困惑" }, AnimationIndex = 2 },
+                new { Keywords = new[] { "點頭", "理解" }, AnimationIndex = 3 }
+            };
+
+            foreach (var map in animationMap)
+            {
+                foreach (var keyword in map.Keywords)
+                {
+                    if (response.Contains(keyword))
+                    {
+                        npcController.PlayAnimation(map.AnimationIndex);
+                        Debug.Log($"Triggered animation index: {map.AnimationIndex} for keyword: {keyword}");
+                        return;
+                    }
+                }
+            }
+
+            // 如果沒有匹配的條件，則執行默認動畫
+            npcController.PlayAnimation(0);
+            Debug.Log("Default animation triggered.");
+        }
     }
 
     /// <summary>
@@ -148,6 +225,7 @@ namespace Ou
         }
     }
 }
+
 
 
 
