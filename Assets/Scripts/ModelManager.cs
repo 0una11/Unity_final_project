@@ -27,7 +27,7 @@ namespace Ou
         [SerializeField] private GameObject mainUI;        // 遊戲主界面
 
         [Header("NPC 控制器")]
-        [SerializeField] private NPCController npcController; // 連接 NPC 控制器
+        [SerializeField] private NPCController npc; // 連接 NPC 控制器
 
         private void Start()
         {
@@ -171,7 +171,7 @@ namespace Ou
 
         private void TriggerAnimation(string response)
         {
-            if (npcController == null)
+            if (npc == null)
             {
                 Debug.LogError("NPC Controller 未正確設置！");
                 return;
@@ -194,7 +194,7 @@ namespace Ou
                 {
                     if (response.Contains(keyword))
                     {
-                        npcController.PlayAnimation(map.AnimationIndex);
+                        npc.PlayAnimation(map.AnimationIndex);
                         Debug.Log($"Triggered animation index: {map.AnimationIndex} for keyword: {keyword}");
                         return;
                     }
@@ -202,7 +202,7 @@ namespace Ou
             }
 
             // 如果沒有匹配的條件，則執行默認動畫
-            npcController.PlayAnimation(0);
+            npc.PlayAnimation(0);
             Debug.Log("Default animation triggered.");
         }
     }

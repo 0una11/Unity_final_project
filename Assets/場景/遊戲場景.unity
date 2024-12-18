@@ -935,7 +935,7 @@ MonoBehaviour:
   statusText: {fileID: 0}
   introductionPanel: {fileID: 13581264}
   mainUI: {fileID: 773625024}
-  npcController: {fileID: 1446780033}
+  npc: {fileID: 0}
 --- !u!1 &282884665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1495,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524191014433191062, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 360ca7fb3bec50f44a11d3cc7e4f04e1, type: 2}
     - target: {fileID: 4740797216443291912, guid: 10b918996d9719c4c8b9d329d951fa92, type: 3}
       propertyPath: m_Name
       value: SnowGirl_2
@@ -2059,7 +2063,7 @@ MonoBehaviour:
   statusText: {fileID: 0}
   introductionPanel: {fileID: 773625024}
   mainUI: {fileID: 13581264}
-  npcController: {fileID: 1446780033}
+  npc: {fileID: 1446780033}
 --- !u!4 &621867045
 Transform:
   m_ObjectHideFlags: 0
@@ -3739,7 +3743,7 @@ MonoBehaviour:
   statusText: {fileID: 0}
   introductionPanel: {fileID: 773625024}
   mainUI: {fileID: 13581264}
-  npcController: {fileID: 1446780033}
+  npc: {fileID: 1446780033}
 --- !u!1 &1470478019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +3902,7 @@ MonoBehaviour:
   statusText: {fileID: 0}
   introductionPanel: {fileID: 0}
   mainUI: {fileID: 0}
-  npcController: {fileID: 0}
+  npc: {fileID: 0}
 --- !u!1 &1483033861
 GameObject:
   m_ObjectHideFlags: 0
